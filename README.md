@@ -29,55 +29,47 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false, add_index unique: true|
+|email|string|null: false|
 
 ### Association
 
-- belongs_to :group
-- has_many :tweets _ belongs_to :member, as: :memberable
+- has_many :groups, through: :members
+- has_many :messages
 
 
-## tweets table
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|text|text|
-|image|text|
+|user_id|integer|null: false, foreign_key: true|
+|text|string|
+|image|string|
+|group_id|integer|null: false,  foreign_key: true|
 
 ### Association
-
-- belongs_to :user
-
+- belongs_to :users
 
 ## group table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|name|string|
-|group_id|integer|
+|name|string|null: false, add_index unique: true|
 
 ### Association
 
-- has_many :users
-- has_many :members, as: :memberable
+- has_many :users, through: :members
 
 
 ## members table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|
-|group_id|integer|
+|user_id|integer|null: false, add_index unique: true|
+|group_id|integer|null: false, add_index unique: true|
 
 ### Association
 
 - belongs_to :group
 - belongs_to :user
-- belongs_to :memberable, polymorphic: true
 
