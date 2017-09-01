@@ -29,7 +29,7 @@ DB設計
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index unique: true|
+|name|string|null: false, add_index: true|
 |email|string|null: false|
 
 ### Association
@@ -48,25 +48,27 @@ DB設計
 |group_id|integer|null: false,  foreign_key: true|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
+- belongs_to :group
 
-## group table
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index unique: true|
+|name|string|null: false|
 
 ### Association
 
 - has_many :users, through: :members
+- has_many :messages
 
 
 ## members table
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, add_index unique: true|
-|group_id|integer|null: false, add_index unique: true|
+|user_id|integer|null: false, add_index: true|
+|group_id|integer|null: false|
 
 ### Association
 
