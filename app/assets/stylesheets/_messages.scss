@@ -1,26 +1,27 @@
-.header {
-  width:100%;
-  position: fixed;
+.sidebar {
+  width: 300px;
 
-  .left-header {
+  .sidebar_header {
     background-color: #253141;
-    width: 300px;
+    position: fixed;
 
-    %h2.left-header {
+    .sidebar_h2 {
       font-size: 16px;
       font-weight: bold;
       color: #FFFFFF;
-      padding:35px 20px;
+
+
     }
 
-    %i.fa.fa-pencil-square-o {
-      float: right;
-    }
+  }
 
-    %i.fa.fa-cog {
-      float: right;
-    }
+}
 
+.contents {
+  .left-content {
+    background-color: #2f3e51;
+    width: 300px;
+    .
   }
 }
 
