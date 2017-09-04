@@ -3,36 +3,54 @@
 
   .sidebar_header {
     background-color: #253141;
-    position: fixed;
+    height: 100px;
+    clear: both;
 
-    h2 {
+    p {
       font-size: 16px;
       font-weight: bold;
       color: #FFFFFF;
-      padding: 35px 20px 15px;
+      padding: 35px 20px 42px;
+      float: left;
     }
 
-    i {
+    i.fa.fa-pencil-square-o {
+      padding: 40px 5px 42px 5px;
+      color: white;
       float: right;
-      padding: 35px 20px 15px;
-
     }
 
+    i.fa.fa-cog{
+      padding: 40px 20px 42px 5px;
+      color: white;
+      float: right;
+    }
 
   }
 
-  .side-bar_groups
+
+  .side-bar_groups {
     background-color: #2f3e51;
-
-    .side-bar_groups_group
-
+  }
+    .side-bar_groups_group {
+  }
 }
+
 
 .contents {
-  .left-content {
-    background-color: #2f3e51;
-    width: 300px;
-    .
+  width: calc(100vw - 300px);
+
+  .contents_header {
+    position: fixed;
+
+  }
+
+  .contents_messages{
+  }
+
+  .contents_form {
+
   }
 }
+
 
