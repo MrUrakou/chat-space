@@ -1,12 +1,18 @@
 
 .sidebar
-  .sidebar_header
-    %p.group_name MrUrakou
-    %i.fa.fa-cog
-    %i.fa.fa-pencil-square-o
-  .sidebar_groups
-    .sidebar_groups_group
+  .header
+    %p.header__username MrUrakou
+    %i.header__btn-right.fa.fa-cog
+    %i.header__btn-left.fa.fa-pencil-square-o
+  .sidebar__groups
+    .sidebar__groups__group
+      %p.group-name 尾山台
+      %p.group-message どらあ！
 .contents
-  .contents_header
-  .contents_messages
-  .contents_form
+  .contents__header
+    .name
+      %p.groupname 等々力
+      %p.membername MEMBER: MrUrakou
+    .box Edit
+  .contents__messages
+  .contents__form
