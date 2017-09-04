@@ -1,12 +1,13 @@
 .sidebar {
   height: 100%;
   width: 300px;
+  float: left;
 
-  .sidebar__header {
+  .header {
     background-color: #253141;
-    height: 100px;
+    height: 125px;
 
-    .username {
+    &__username {
       font-size: 16px;
       font-weight: bold;
       color: #FFFFFF;
@@ -14,14 +15,14 @@
       float: left;
     }
 
-    i.fa.fa-pencil-square-o {
-      padding: 40px 5px 42px 5px;
+    &__btn-left {
+      padding: 40px 0 42px 0;
       color: white;
       float: right;
     }
 
-    i.fa.fa-cog{
-      padding: 40px 20px 42px 5px;
+    &__btn-right {
+      padding: 40px 20px 42px 0;
       color: white;
       float: right;
     }
@@ -31,16 +32,17 @@
   .sidebar__groups {
     background-color: #2f3e51;
 
-    .sidebar__groups__group {
+    &__group {
 
-      .group__name {
+      .group-name {
       font-size: 15px;
       font-weight: bold;
       color: #FFFFFF;
       padding: 20px 20px 5px;
+
       }
 
-      .group__message {
+      .group-message {
       font-size: 11px;
       font-weight: bold;
       color: #FFFFFF;
@@ -52,16 +54,45 @@
 
 
 .contents {
+  width: calc( 100% - 310px );
+  float: right;
 
-  .contents__header {
-    position: fixed;
+  &__header {
+    height: 125px;
+    float: left;
+
+    .name {
+      float: left;
+    }
+
+      .groupname {
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0 15px 40px;
+      }
+
+      .membername {
+        font-size: 12px;
+        color: #999999;
+        padding: 0 0 0 40px;
+      }
+
+    .box {
+      float: right;
+      padding: 10px 20px;
+      border: solid #38AEF0;
+      position: absolute;
+      right: 40px;
+      top: 28px;
+    }
+  }
+
+  &__messages{
+    background-color: #AAAAAA;
 
   }
 
-  .contents__messages{
-  }
-
-  .contents__form {
+  &__form {
 
   }
 }
