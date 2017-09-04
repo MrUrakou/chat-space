@@ -1,12 +1,12 @@
 .sidebar {
+  height: 100%;
   width: 300px;
 
-  .sidebar_header {
+  .sidebar__header {
     background-color: #253141;
     height: 100px;
-    clear: both;
 
-    p {
+    .username {
       font-size: 16px;
       font-weight: bold;
       color: #FFFFFF;
@@ -25,30 +25,43 @@
       color: white;
       float: right;
     }
-
   }
 
 
-  .side-bar_groups {
+  .sidebar__groups {
     background-color: #2f3e51;
-  }
-    .side-bar_groups_group {
+
+    .sidebar__groups__group {
+
+      .group__name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 20px 20px 5px;
+      }
+
+      .group__message {
+      font-size: 11px;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 0 20px 40px 20px;
+      }
+    }
   }
 }
 
 
 .contents {
-  width: calc(100vw - 300px);
 
-  .contents_header {
+  .contents__header {
     position: fixed;
 
   }
 
-  .contents_messages{
+  .contents__messages{
   }
 
-  .contents_form {
+  .contents__form {
 
   }
 }
