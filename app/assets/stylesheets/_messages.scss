@@ -28,10 +28,9 @@
     }
   }
 
-
   .sidebar__groups {
     background-color: #2f3e51;
-    height: 100%;
+    height: calc(100vh - 125px);
 
     &__group {
 
@@ -89,7 +88,7 @@
   &__messages{
     clear: both;
     background-color: #eeeeee;
-    height: 100%;
+    height: calc( 100vh - 215px );
 
     .message-top {
       width: 100%;
@@ -110,13 +109,40 @@
         width: 70%;
         padding: 46px 10px 10px 40px;
       }
-
-
     }
   }
 
   &__form {
+    background-color: #17D0E8;
+    height: 90px;
+    width: 100%;
 
+    .field {
+      height: 50px;
+      margin: 20px 0 20px 40px;
+      background-color: #FFF;
+      width: 70%;
+      float: left;
+      color: #434A54;
+      font-size:16px;
+    }
+
+    .contents__form__input__btn {
+      width: 2%;
+      margin: 21px 10px 20px 0;
+      padding: 14px 10px 14px;
+      background-color: #FFF;
+      float: left;
+    }
+
+    .button {
+      background-color: #38AEF0;
+      color : #FFF;
+      margin: 20px 40px 20px 15px;
+      padding: 14px 0;
+      width: 8%;
+      float: left;
+    }
   }
 }
 

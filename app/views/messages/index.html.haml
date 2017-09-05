@@ -1,10 +1,12 @@
-
 .sidebar
   .header
     %p.header__username MrUrakou
     %i.header__btn-right.fa.fa-cog
     %i.header__btn-left.fa.fa-pencil-square-o
   .sidebar__groups
+    .sidebar__groups__group
+      %p.group-name 尾山台
+      %p.group-message どらあ！
     .sidebar__groups__group
       %p.group-name 尾山台
       %p.group-message どらあ！
@@ -15,4 +17,21 @@
       %p.membername MEMBER: MrUrakou
     .box Edit
   .contents__messages
+    .message-top
+      .message-top__name MrUrakou
+      .message-top__date 2017/9/1 11:15:10
+    .message-bottom おらあ！
+    .message-top
+      .message-top__name MrUrakou
+      .message-top__date 2017/9/1 11:15:10
+    .message-bottom おらあ！
+    .message-top
+      .message-top__name MrUrakou
+      .message-top__date 2017/9/1 11:15:10
+    .message-bottom おらあ！
   .contents__form
+    .contents__form__input
+      %input.field{ type: "text", placeholder: "type a message" }
+      .contents__form__input__btn
+        %i.input-btn.fa.fa-picture-o
+      %input.button{ type: "submit", value: "Send" }
