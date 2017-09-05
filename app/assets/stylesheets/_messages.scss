@@ -31,6 +31,7 @@
 
   .sidebar__groups {
     background-color: #2f3e51;
+    height: 100%;
 
     &__group {
 
@@ -39,7 +40,6 @@
       font-weight: bold;
       color: #FFFFFF;
       padding: 20px 20px 5px;
-
       }
 
       .group-message {
@@ -52,14 +52,15 @@
   }
 }
 
-
 .contents {
-  width: calc( 100% - 310px );
+  width: calc( 100% - 300px );
+  height: 100%;
   float: right;
 
   &__header {
     height: 125px;
     float: left;
+    width: 100%;
 
     .name {
       float: left;
@@ -81,15 +82,37 @@
       float: right;
       padding: 10px 20px;
       border: solid #38AEF0;
-      position: absolute;
-      right: 40px;
-      top: 28px;
+      margin: 28px 40px 28px 0;
     }
   }
 
   &__messages{
-    background-color: #AAAAAA;
+    clear: both;
+    background-color: #eeeeee;
+    height: 100%;
 
+    .message-top {
+      width: 100%;
+      float: left;
+
+      &__name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        width: 10%;
+        float: left;
+        padding: 46px 10px 10px 40px;
+      }
+
+      &__date {
+        font-size: 12px;
+        color: #999999;
+        width: 70%;
+        padding: 46px 10px 10px 40px;
+      }
+
+
+    }
   }
 
   &__form {
@@ -97,4 +120,9 @@
   }
 }
 
-
+    .message-bottom {
+      font-size: 14px;
+      color: #434A54;
+      clear: both;
+      padding: 0 0 40px 40px;
+      }
