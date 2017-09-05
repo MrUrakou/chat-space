@@ -1,0 +1,154 @@
+.sidebar {
+  height: 100%;
+  width: 300px;
+  float: left;
+
+  .header {
+    background-color: #253141;
+    height: 125px;
+
+    &__username {
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 35px 20px 42px;
+      float: left;
+    }
+
+    &__btn-left {
+      padding: 40px 0 42px 0;
+      color: white;
+      float: right;
+    }
+
+    &__btn-right {
+      padding: 40px 20px 42px 0;
+      color: white;
+      float: right;
+    }
+  }
+
+  .sidebar__groups {
+    background-color: #2f3e51;
+    height: calc(100vh - 125px);
+
+    &__group {
+
+      .group-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 20px 20px 5px;
+      }
+
+      .group-message {
+      font-size: 11px;
+      font-weight: bold;
+      color: #FFFFFF;
+      padding: 0 20px 40px 20px;
+      }
+    }
+  }
+}
+
+.contents {
+  width: calc( 100% - 300px );
+  height: 100%;
+  float: right;
+
+  &__header {
+    height: 125px;
+    float: left;
+    width: 100%;
+
+    .name {
+      float: left;
+    }
+
+      .groupname {
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0 15px 40px;
+      }
+
+      .membername {
+        font-size: 12px;
+        color: #999999;
+        padding: 0 0 0 40px;
+      }
+
+    .box {
+      float: right;
+      padding: 10px 20px;
+      border: solid #38AEF0;
+      margin: 28px 40px 28px 0;
+    }
+  }
+
+  &__messages{
+    clear: both;
+    background-color: #eeeeee;
+    height: calc( 100vh - 215px );
+
+    .message-top {
+      width: 100%;
+      float: left;
+
+      &__name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+        width: 10%;
+        float: left;
+        padding: 46px 10px 10px 40px;
+      }
+
+      &__date {
+        font-size: 12px;
+        color: #999999;
+        width: 70%;
+        padding: 46px 10px 10px 40px;
+      }
+    }
+  }
+
+  &__form {
+    background-color: #17D0E8;
+    height: 90px;
+    width: 100%;
+
+    .field {
+      height: 50px;
+      margin: 20px 0 20px 40px;
+      background-color: #FFF;
+      width: 70%;
+      float: left;
+      color: #434A54;
+      font-size:16px;
+    }
+
+    .contents__form__input__btn {
+      width: 2%;
+      margin: 21px 10px 20px 0;
+      padding: 14px 10px 14px;
+      background-color: #FFF;
+      float: left;
+    }
+
+    .button {
+      background-color: #38AEF0;
+      color : #FFF;
+      margin: 20px 40px 20px 15px;
+      padding: 14px 0;
+      width: 8%;
+      float: right;
+    }
+  }
+}
+
+    .message-bottom {
+      font-size: 14px;
+      color: #434A54;
+      clear: both;
+      padding: 0 0 40px 40px;
+    }
