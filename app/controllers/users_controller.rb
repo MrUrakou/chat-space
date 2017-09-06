@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
-      destroy_user_session_path
+      edit_user_registration_path
     end
   end
 
