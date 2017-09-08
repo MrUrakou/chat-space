@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
+  has_many :members
   has_many :users, through: :members
-  has_many :messages
-  accepts_nested_attributes_for :group_users
+  accepts_nested_attributes_for :members, allow_destroy: true
 end
