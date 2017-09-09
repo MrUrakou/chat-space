@@ -2,14 +2,17 @@
   %h1 新規チャットグループ
   %form#new_chat_group.new_chat_group{"accept-charset" => "UTF-8", action: "/chat_groups", method: "post"}
     .chat-group-form__errors
-      %h2
-        1件のエラーが発生しました。
+      - if @group.errors.any?
         %ul
-          %li エラーです
+          -@group.errors.full_messages.each do |message|
+            %li
+              =message
+        %h2
+          エラーが発生しました。
   = form_for(@group) do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label :name, "グループ名", class: "chat-group-form__label"
+        = f.label :name, "Name", class: "chat-group-form__label"
       .chat-group-form__field--right
         = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
