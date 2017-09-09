@@ -2,8 +2,13 @@
   %h1 チャットグループ編集
   %form#edit_chat_group_22.edit_chat_group{"accept-charset" => "UTF-8", action: "/chat_groups/22", method: "post"}
     .chat-group-form__errors
-      %h2
-        エラーが発生しました。
+      - if @group.errors.any?
+        %ul
+          -@group.errors.full_messages.each do |message|
+            %li
+              =message
+        %h2
+          エラーが発生しました。
   = form_for(@group) do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
