@@ -1,6 +1,6 @@
 .sidebar__groups__group
-- @groups.each do |group|
-  %p.group-name
-    = group.name
-  %p.group-message
-    まだメッセージはありません
+  - @groups.each do |group|
+    %p.group-name
+      = group.name
+    %p.group-message
+      まだメッセージはありません
