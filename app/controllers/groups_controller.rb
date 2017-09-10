@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
 
   def update
     group = Group.find(params[:id])
-      group.update(group_params)
+    group.update(group_params)
   end
 
   def create
@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
 
     private
     def group_params
-      params.require(:group).permit(:name)
+      params.require(:group).permit(:name, user_ids: [])
     end
 
 end
