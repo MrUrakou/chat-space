@@ -1,6 +1,7 @@
 .sidebar__groups__group
   - @groups.each do |group|
-    %p.group-name
-      = group.name
-    %p.group-message
-      まだメッセージはありません
+    = link_to group_messages_path(group) do
+      %p.group-name
+        = group.name
+      %p.group-message
+        まだメッセージはありません
