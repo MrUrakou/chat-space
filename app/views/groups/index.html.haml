@@ -1,0 +1,10 @@
+.sidebar
+  .header
+    %p.header__username
+      = current_user.name
+    = link_to edit_user_registration_path do
+      %i.header__btn-right.fa.fa-cog
+    = link_to new_group_path do
+      %i.header__btn-left.fa.fa-pencil-square-o
+  .sidebar__groups
+    = render "sidebar_groups"
