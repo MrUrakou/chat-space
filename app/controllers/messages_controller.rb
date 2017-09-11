@@ -4,6 +4,14 @@ class MessagesController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    @message = Message.new(group_params)
+    if @message.save
+      redirect_to root_path
+    end
+  end
+
+  private
+  def message_params
+    params.require(:message).permit(:text, :image)
   end
 end
