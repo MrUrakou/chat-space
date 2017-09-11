@@ -1,0 +1,8 @@
+ja:
+  devise:
+    failure:
+      unauthenticated: 'ログインまたは登録が必要です'
+    sessions:
+      signed_in: 'ログインしました'
+    registrations:
+      signed_up: 'アカウントが登録されました'
