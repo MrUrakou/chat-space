@@ -1,0 +1,8 @@
+.message-top
+  .message-top__name
+    = current_user.name
+  .message-top__date
+    - @time = Time.new
+    = @time.strftime("%Y/ %m/ %d/ %H:%M")
+.message-bottom
+  = @message
