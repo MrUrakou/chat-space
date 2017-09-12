@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
     @groupname = "#{@group.name}"
     @members = @group.users
     @message = Message.new
+    @groupmessages = @group.messages
   end
 
   def update
