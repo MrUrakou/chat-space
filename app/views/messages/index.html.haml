@@ -20,10 +20,9 @@
   .contents__messages
     = render "contents__messages"
   .contents__form
+  = form_for [@group, @message] do |f|
     .contents__form__input
-      %input.field{ type: "text", placeholder: "type a message" }
+      = f.text_field :text, class: "contents__form-field", placeholder: "type a message"
       .contents__form__input__btn
         %i.input-btn.fa.fa-picture-o
-      %input.button{ type: "submit", value: "Send" }
-
-
+      = f.submit value: "send", class: "button"
