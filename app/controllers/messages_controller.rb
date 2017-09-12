@@ -10,6 +10,10 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def update
+    @group.update(group_params)
+  end
+
   def create
     @message = Message.new(message_params)
     if @message.save
