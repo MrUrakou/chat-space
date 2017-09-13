@@ -4,4 +4,5 @@
       %p.group-name
         = group.name
       %p.group-message
-        = group.messages
+        = group.messages.last.text if group.messages.present?
+

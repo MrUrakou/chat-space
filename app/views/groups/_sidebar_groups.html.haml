@@ -4,4 +4,4 @@
       %p.group-name
         = group.name
       %p.group-message
-        まだメッセージはありません
+        = group.messages.last.text if group.messages.present?
