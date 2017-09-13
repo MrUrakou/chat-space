@@ -4,10 +4,10 @@
       %p.group-name
         = group.name
       %p.group-message
-      - if group.messages.last.text.present?
-        = group.messages.last.text
-      - elsif
-        - group.messages.image.present?
-        = "画像が投稿されています。"
-      - else
-        = "メッセージはありません。"
+        - if group.messages.present?
+          -if group.messages.last.text.present?
+            = group.messages.last.text
+          -else
+            = "画像が投稿されています。"
+        - else
+          = "メッセージはありません。"
