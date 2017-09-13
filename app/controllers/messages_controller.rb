@@ -11,6 +11,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       redirect_to group_messages_path
+    else
+      redirect_to root_path, alert: "メッセージを入力してください"
     end
   end
 
