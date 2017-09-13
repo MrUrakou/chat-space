@@ -9,10 +9,6 @@ class MessagesController < ApplicationController
     @groupmessages = @group.messages
   end
 
-  def update
-    @message.update(message_params)
-  end
-
   def create
     @group = Group.find(params[:group_id])
     @message = Message.new(message_params)
