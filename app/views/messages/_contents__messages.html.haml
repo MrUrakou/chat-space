@@ -7,5 +7,4 @@
       = @time.strftime("%Y/ %m/ %d/ %H:%M")
   .message-bottom
     = message.text
-  - if message.image.present?
-    = image_tag message.image, size:'120x180'
+    = image_tag message.image, size:'120x180' if message.image.present?
