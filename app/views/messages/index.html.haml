@@ -12,9 +12,9 @@
   .contents__header
     .name
       %p.groupname
-        = @groupname
+        = @group.name
       %p.membername
-        - @members.each do |member|
+        - @group.users.each do |member|
           = @membername = member[:name]
     .box Edit
   .contents__messages
