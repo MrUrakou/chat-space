@@ -4,10 +4,4 @@
       %p.group-name
         = group.name
       %p.group-message
-        - if group.messages.present?
-          -if group.messages.last.text.present?
-            = group.messages.last.text
-          -else
-            = "画像が投稿されています。"
-        - else
-          = "メッセージはありません。"
+        = group.message_display
