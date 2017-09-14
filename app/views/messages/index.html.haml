@@ -17,14 +17,15 @@
       %p.membername
         - @group.users.each do |member|
           = member.name
-    .box Edit
+    = link_to edit_group_path(@group) do
+      .box Edit
   .contents__messages
     = render partial: "contents__messages"
   .contents__form
-  = form_for [@group, @message] do |f|
-    .contents__form__input
-      = f.text_field :text, class: "contents__form-field", placeholder: "type a message"
-      %label.contents__form__input__btn
-        .fa.fa-picture-o
-        = f.file_field :image
-      = f.submit "send", class: "button"
+    = form_for [@group, @message] do |f|
+      .contents__form__input
+        = f.text_field :text, class: "contents__form-field", placeholder: "type a message"
+        %label.contents__form__input__btn
+          .fa.fa-picture-o
+          = f.file_field :image
+        = f.submit "send", class: "button"
