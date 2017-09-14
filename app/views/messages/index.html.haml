@@ -24,6 +24,7 @@
   = form_for [@group, @message] do |f|
     .contents__form__input
       = f.text_field :text, class: "contents__form-field", placeholder: "type a message"
-      .contents__form__input__btn
-        = f.file_field :image, class: "fa fa-picture-o"
-      = f.submit value: "send", class: "button"
+      %label.contents__form__input__btn
+        .fa.fa-picture-o
+        = f.file_field :image
+      = f.submit "send", class: "button"

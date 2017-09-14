@@ -154,3 +154,7 @@
     width: 8%;
     float: right;
   }
+
+#message_image[type="file"] {
+  display: none;
+}
