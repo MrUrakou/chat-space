@@ -7,7 +7,8 @@
     = link_to new_group_path do
       %i.header__btn-left.fa.fa-pencil-square-o
   .sidebar__groups
-    = render "sidebar__groups"
+    .sidebar__groups__group
+      = render partial: "sidebar__groups", collection: @groups, as: "group"
 .contents
   .contents__header
     .name
@@ -18,7 +19,7 @@
           = @membername = member.name
     .box Edit
   .contents__messages
-    = render "contents__messages"
+    = render partial: "contents__messages"
   .contents__form
   = form_for [@group, @message] do |f|
     .contents__form__input
