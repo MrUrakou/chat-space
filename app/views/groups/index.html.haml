@@ -7,4 +7,5 @@
     = link_to new_group_path do
       %i.header__btn-left.fa.fa-pencil-square-o
   .sidebar__groups
-    = render "sidebar_groups"
+    .sidebar__groups__group
+    = render partial: "sidebar_groups", collection: @groups
