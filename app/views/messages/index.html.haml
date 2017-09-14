@@ -16,7 +16,7 @@
         = @group.name
       %p.membername
         - @group.users.each do |member|
-          = @membername = member.name
+          = member.name
     .box Edit
   .contents__messages
     = render partial: "contents__messages"
