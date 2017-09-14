@@ -2,4 +2,5 @@
   %p.group-name
     = group.name
   %p.group-message
-    = group.message_display
+    = group.message_display if group.messages.present?
+

@@ -7,25 +7,5 @@
     = link_to new_group_path do
       %i.header__btn-left.fa.fa-pencil-square-o
   .sidebar__groups
-    = render "sidebar_groups"
-.contents
-  .contents__header
-    .name
-      %p.groupname　MrUrakou
-      %p.membername MEMBER: MrUrakou
-    .box Edit
-  .contents__messages
-    .message-top
-      .message-top__name MrUrakou
-      .message-top__date 2017/9/1 11:15:10
-    .message-bottom おらあ！
-    .message-top
-      .message-top__name MrUrakou
-      .message-top__date 2017/9/1 11:15:10
-    .message-bottom おらあ！
-  .contents__form
-    .contents__form__input
-      %input.field{ type: "text", placeholder: "type a message" }
-      .contents__form__input__btn
-        %i.input-btn.fa.fa-picture-o
-      %input.button{ type: "submit", value: "Send" }
+    .sidebar__groups__group
+      = render partial: "sidebar_groups", collection: @groups, as: "group"
