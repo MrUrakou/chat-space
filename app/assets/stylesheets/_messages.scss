@@ -89,6 +89,7 @@
     clear: both;
     background-color: #eeeeee;
     height: calc( 100vh - 215px );
+    overflow: scroll;
 
     .message-top {
       width: 100%;
