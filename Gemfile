@@ -60,3 +60,4 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rspec-rails'
+gem 'factory_girl_rails', "~> 4.4.1"
