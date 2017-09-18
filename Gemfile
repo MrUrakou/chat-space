@@ -41,6 +41,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -61,3 +62,6 @@ gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+group :test do
+  gem 'faker'
+end

@@ -3,10 +3,11 @@ FactoryGirl.define do
   pass = "testtest"
 
   factory :user do
-    name                  "urata"
-    email                 "btz@gmail.com"
+    sequence(:name) {|n| "#{n}taro" }
+    sequence(:email) {|n| "example_#{n}@example.com" }
     password              pass
     password_confirmation pass
   end
-
 end
+
+
