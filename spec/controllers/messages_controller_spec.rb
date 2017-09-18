@@ -4,6 +4,7 @@ describe MessagesController, type: :controller do
   let(:user) { create(:user) }
   let(:group) { create(:group) }
   let(:member) { create(:member)}
+  # let(:message){ attributes_for(:message) }
 
   describe 'GET #index' do
     context "when user login" do
@@ -13,7 +14,6 @@ describe MessagesController, type: :controller do
       end
 
       it "assigns the requested group to @group" do
-        group = create(:group)
         get :index, params: { group_id: group }
         expect(assigns(:group)).to eq group
       end
@@ -25,7 +25,7 @@ describe MessagesController, type: :controller do
       end
 
       it "renders the :index template" do
-        get :index, params: { group_id: group}
+        get :index, params: { group_id: group, message: attributes_for(:message) }
         expect(response).to render_template :index
       end
     end
@@ -53,6 +53,11 @@ describe MessagesController, type: :controller do
           get :index, params: { group_id: group}
           expect(response).to render_template :index
         end
+
+        it "flash notice message" do
+          post :create, params: { group_id: group, message: attributes_for(:message) }
+          expect(flash[:notice]).to eq("送信しました")
+        end
     end
 
     context "when user login and failed saving message" do
@@ -67,6 +72,11 @@ describe MessagesController, type: :controller do
         it "renders the :index template" do
           get :index, params: { group_id: group}
           expect(response).to render_template :index
+        end
+
+        it "flash alert message" do
+         post :create, params: { group_id: group, message: attributes_for(:message, text: nil, image: nil) }
+         expect(flash[:alert]).to eq("入力してください")
         end
     end
 
