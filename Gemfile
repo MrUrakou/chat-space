@@ -65,3 +65,6 @@ gem 'mini_magick'
 group :test do
   gem 'faker'
 end
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
