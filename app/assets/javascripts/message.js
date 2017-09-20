@@ -1,7 +1,48 @@
 $(function(){
-  $('form').on('submit', function(e){
+  function buildHTML(message){
+
+  if (message.image["url"] == null){
+    image_html = ``
+  } else {
+    image_html = `<div class = "message-bottom"><img src ="${message.image["url"]}" width="120" height="180"}</div>`
+  }
+
+    var html = `<div class="message-top">
+                  <div class="message-top__name">
+                    ${message.name}
+                  </div>
+                  <div class="message-top__date">
+                    ${message.created_at}
+                  </div>
+                  <div class="message-bottom">
+                    ${message.text}
+                    ${image_html}
+                  </div>
+                </div>`
+    return html;
+  }
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData(this);
+    var url = $(this).attr('action')
+    console.log(url);
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.contents__messages').append(html)
+      $('.contents__form-field').val('')
+      $(".button").attr('disabled', false);
+      $('.contents__messages').animate({scrollTop:$('.contents__form').offset().top});
+    })
+    .fail(function(){
+      alert('error');
+    })
   });
 });
