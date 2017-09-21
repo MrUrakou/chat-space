@@ -27,5 +27,5 @@
         = f.text_field :text, class: "contents__form-field", placeholder: "type a message"
         %label.contents__form__input__btn
           .fa.fa-picture-o
-          = f.file_field :image
+          = f.file_field :image, class: "contents__form-image"
         = f.submit "send", class: "button"
