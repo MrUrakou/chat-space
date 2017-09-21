@@ -1,3 +1,4 @@
+Jbuilder.ignore_nil
 json.text  @message.text
 json.image  @message.image
 json.name   @message.user.name
