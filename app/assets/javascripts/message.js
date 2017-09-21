@@ -1,11 +1,11 @@
 $(function(){
   function buildHTML(message){
 
-  if (message.image["url"] == null){
-    image_html = ``
-  } else {
-    image_html = `<div class = "message-bottom"><img src ="${message.image["url"]}" width="120" height="180"}</div>`
-  }
+  // if (message.image["url"] == null){
+  //   image_html = ``
+  // } else {
+  //   image_html = `<div class = "message-bottom"><img src ="${message.image["url"]}" width="120" height="180"}</div>`
+  // }
 
     var html = `<div class="message-top">
                   <div class="message-top__name">
@@ -16,7 +16,7 @@ $(function(){
                   </div>
                   <div class="message-bottom">
                     ${message.text}
-                    ${image_html}
+                    ${message.image}
                   </div>
                 </div>`
     return html;
