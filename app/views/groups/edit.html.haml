@@ -14,23 +14,26 @@
       .chat-group-form__field--left
         = f.label :name, "グループ名", class: "chat-group-form__label"
       .chat-group-form__field--right
-        = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください", type: "text"
+        = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         .chat-group-form__label チャットメンバーを追加
       .chat-group-form__field--right
-        = f.text_field :name, class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", type: "text"
-    .chat-group-form__search.clearfix
-      #user-search-result
-    .chat-group-form__field.clearfix
+        .chat-group-form__search.clearfix
+          = f.text_field :name, class: "chat-group-form__input", type: "text", placeholder: "追加したいユーザー名を入力してください", id: "user-search-field", data: {id: "id"}
+        #user-search-results
+        .chat-group-form__field.clearfix
       .chat-group-form__field--left
         = f.label :name, "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
+        #idchat-group-users
+        .chat-group-user.clearfix{ id: "chat-group-user-22" }
+        %input{ name: "chat_group[user_ids][]", type: "hidden", value: "22" }
+        %p.chat-group-user__name
         .chat-group-form__field.clearfix
           .chat-group-form__field--left
           .chat-group-form__field--right
-          = f.submit "更新する", class: "chat-group-form__action-btn"
-
+          = f.submit "登録する", class: "chat-group-form__action-btn"
       / .check_box
       /   = form_for @group do |f|
       /     = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
