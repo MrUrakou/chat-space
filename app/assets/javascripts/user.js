@@ -12,8 +12,9 @@ function appendUser(user){
     search_list.append(html);
   }
   $(function() {
-    $(".chat-group-form__input").on("keyup", function() {
-      var input = $(".chat-group-form__input").val();
+    $("#user-search-field").on("keyup", function() {
+      var input = $("#user-search-field").val();
+      console.log(input);
       $.ajax({
         type: 'GET',
         url: '/users',
