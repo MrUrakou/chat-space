@@ -34,7 +34,3 @@
           .chat-group-form__field--left
           .chat-group-form__field--right
           = f.submit "登録する", class: "chat-group-form__action-btn"
-      / .check_box
-      /   = form_for @group do |f|
-      /     = f.collection_check_boxes(:user_ids, User.all, :id, :name) do |b|
-      /       = b.label { b.check_box + b.text }
