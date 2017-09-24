@@ -21,6 +21,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
+    var timer = setInterval(function() {
     $.ajax({
       url: url,
       type: "POST",
@@ -40,5 +41,6 @@ $(function(){
     .fail(function(){
       alert('error');
     })
+    } , 3000 );
   });
 });
