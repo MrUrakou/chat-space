@@ -4,7 +4,11 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages
+    @messages = @group.messages.order(created_at: :DESC).includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
