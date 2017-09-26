@@ -1,5 +1,5 @@
 - @group.messages.each do |message|
-  .message-top
+  .message-top{'data-message-id': message.id}
     .message-top__name
       = message.user.name
     .message-top__date
