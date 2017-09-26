@@ -2,21 +2,49 @@ $(function(){
   function buildHTML(message){
 
   message.image == null ? image_html = `` : image_html = `<div class = "message-bottom"><img src ="${message.image}" width="120" height="180"}</div>`
-
-    var html = `<div class="message-top">
-                  <div class="message-top__name">
-                    ${message.name}
-                  </div>
-                  <div class="message-top__date">
-                    ${message.created_at}
-                  </div>
-                  <div class="message-bottom">
-                    ${message.text}
-                    ${image_html}
+    var html = `<div class="message-format" data-message-id="${message.id}">
+                  <div class="message-top">
+                    <div class="message-top__name">
+                      ${message.name}
+                    </div>
+                    <div class="message-top__date">
+                      ${message.created_at}
+                    </div>
+                    <div class="message-bottom">
+                      ${message.text}
+                      ${image_html}
+                    </div>
                   </div>
                 </div>`
     return html;
   }
+
+  $(function(){
+    setInterval(update, 5000);
+   });
+
+    function update(){
+    var message_id = $(".message-format").last().data("message-id");
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        id: message_id },
+      dataType: 'json'
+
+    })
+    .done(function(data){
+     data.forEach(function(a){
+      var html = buildHTML(a);
+      $('.contents__messages').append(html)
+      $('.contents__form-image').val('');
+      $('.contents__form-field').val('');
+      $(".button").attr('disabled', false);
+      $('.contents__messages').animate({scrollTop: $('.contents__messages')[0].scrollHeight}, 'fast');
+      });
+    });
+    }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
