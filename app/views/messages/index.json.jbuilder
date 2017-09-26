@@ -1,7 +1,6 @@
-json.array! @messages.each do |message|
-  json.name     message.user.name
-  json.date     message.created_at.strftime("%Y/%m/%d %H:%M")
-  json.text     message.text
-  json.image    message.image.url
-  json.id       message.id
+json.array! @messages do |message|
+  json.text  @message.text
+  json.image  @message.image.url
+  json.name   @message.user.name
+  json.created_at @message.created_at.strftime("%Y/%m/%d/ %H:%M")
 end
