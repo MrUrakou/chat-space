@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages
     respond_to do |format|
       format.html
-      format.json { @new_message = Message.where('id > ?', params[:id]) }
+      format.json { @new_message = @messages.where('id > ?', params[:id]) }
     end
   end
 
